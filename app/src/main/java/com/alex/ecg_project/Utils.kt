@@ -1,8 +1,10 @@
 package com.alex.ecg_project
 
+import android.annotation.SuppressLint
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
+import java.text.SimpleDateFormat
 import java.util.*
 
 const val GENERATED_VALUE = "generated_value"
@@ -17,3 +19,6 @@ const val MAX_VALUE = 2048
 fun ClosedRange<Int>.random() = Random().nextInt(this.endInclusive - this.start) + this.start
 
 fun <T> Observable<T>.toMainThread() = this.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+
+@SuppressLint("SimpleDateFormat")
+fun getDate(milliseconds: Long) = SimpleDateFormat("HH:mm dd.MM.yyyy").format(Date(milliseconds))

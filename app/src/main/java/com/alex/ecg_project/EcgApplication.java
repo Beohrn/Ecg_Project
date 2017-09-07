@@ -7,6 +7,7 @@ import android.support.multidex.MultiDex;
 import com.alex.ecg_project.config.AppComponent;
 import com.alex.ecg_project.config.AppModule;
 import com.alex.ecg_project.config.DaggerAppComponent;
+import com.facebook.stetho.Stetho;
 
 public class EcgApplication extends Application {
 
@@ -20,6 +21,7 @@ public class EcgApplication extends Application {
   public void onCreate() {
     super.onCreate();
     component = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+    Stetho.initializeWithDefaults(this);
   }
 
   @Override

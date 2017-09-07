@@ -1,15 +1,24 @@
 package com.alex.ecg_project.ui
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import com.alex.ecg_project.EcgApplication
-import com.alex.ecg_project.presenters.MainActivityPresenter
+import com.alex.ecg_project.ui.data_screen.DataScreenPresenter
+import com.alex.ecg_project.ui.list_screen.ListScreenPresenter
+import com.alex.ecg_project.ui.main_screen.MainScreenPresenter
 import javax.inject.Inject
 
 abstract class BaseActivity: AppCompatActivity() {
 
   @Inject
-  protected lateinit var presenter: MainActivityPresenter
+  lateinit var mainPresenter: MainScreenPresenter
+
+  @Inject
+  lateinit var listPresenter: ListScreenPresenter
+
+  @Inject
+  lateinit var dataPresenter: DataScreenPresenter
 
   protected abstract var layoutId: Int
 

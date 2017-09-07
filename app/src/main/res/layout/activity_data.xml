@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/main_toolbar"
+            android:id="@+id/data_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -27,32 +27,10 @@
         android:background="#EBF2D0"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/timer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="16dp"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            tools:text="00:00:00"/>
-        
         <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/line_chart"
+            android:id="@+id/data_line_chart"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
-
-        <Button
-            android:id="@+id/main_button"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounded_button"
-            android:minWidth="160dp"
-            android:textSize="13sp"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginTop="32dp"/>
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
